@@ -3,13 +3,14 @@
 
 from selenium import webdriver
 import time
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Isi nomornya bisa pake array
-nomornya = "Nomornya"
+nomornya = "nomornya" #nomornya contoh 62851324252
 isinya = "Halo gan ini ulangan ke "
 
 
-browser = webdriver.Chrome('E:\instalanP2\chromedriver.exe')
+browser = webdriver.Chrome(ChromeDriverManager().install())
 
 
 for x in range(6):
