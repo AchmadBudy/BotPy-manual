@@ -1,24 +1,13 @@
-# sebelum digunakan sebaiknya mempunyai selenium di perangkat anda
+# required !!!
 # pip install selenium
+# pip install webdriver-manager
 
-from selenium import webdriver
-import time
-from webdriver_manager.chrome import ChromeDriverManager
+from theMachine import loops
 
-# Isi nomornya bisa pake array
-nomornya = "nomornya" #nomornya contoh 62851324252
-isinya = "Halo gan ini ulangan ke "
+# fill the number and message
+# you can fill the number with array
+phoneNumber = "fill the number"
+message = "fill with ur message"
+loop = 1  # this how many u want to loop
 
-
-browser = webdriver.Chrome(ChromeDriverManager().install())
-
-
-for x in range(6):
-    browser.get(
-        'https://web.whatsapp.com/send?phone=' + nomornya + '&text='+isinya+str(x))
-    time.sleep(7)
-    button = browser.find_element_by_xpath("//button[@class='_35EW6']")
-    button.click()
-    time.sleep(1)
-
-browser.close()
+loops(loop, phoneNumber, message)  # input how many u want to loop
